@@ -1,8 +1,11 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { applyProps } from '@react-three/fiber'
 
-export function Stereo(props) {
+export function Stereo({color="#FED86B", ...props }) {
   const { nodes, materials } = useGLTF('/steroe.gltf')
+  applyProps(materials.Plastic, {color: color})
+  applyProps(materials['01 - Default'], {color: 'white'})
   return (
     <group {...props} dispose={null}>
       <group position={[-0.042, 0.938, 0]} rotation={[0, Math.PI / 2, 0]} scale={[0.059, 0.059, 0.055]}>
