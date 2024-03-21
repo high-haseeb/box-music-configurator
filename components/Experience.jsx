@@ -2,7 +2,7 @@
 import React from 'react'
 import { Canvas } from '@react-three/fiber';
 import { Model } from './Model';
-import { Backdrop, Environment, PresentationControls, ScrollControls } from '@react-three/drei';
+import { Environment, PresentationControls, ScrollControls } from '@react-three/drei';
 import { useZoomStore } from '@/store/zoomStore';
 
 const Experience = () => {
@@ -10,13 +10,13 @@ const Experience = () => {
   const zoomOut = useZoomStore(state => state.zoomOut)
   return (
     <div className='w-full h-full bg-[#EEE]'>
-      <Canvas shadows>
-        <PresentationControls speed={3} rotation={[Math.PI / 4, Math.PI / 2 + 1, 0]}>
+      <Canvas>
+        <PresentationControls speed={3} rotation={[Math.PI / 4, Math.PI / 2 + 1, 0]} polar={[-Math.PI, Math.PI]}>
+        <directionalLight position={[1, 1, 1]}/>
           <ScrollControls pages={4}>
             <Model />
           </ScrollControls>
         </PresentationControls>
-        {/* <mesh rotation={[Math.PI /2, 0, 0]} position={[0, -1, 0]}><planeGeometry args={[100, 100, 1, 1]}  /><meshNormalMaterial /></mesh> */}
         <Environment preset='city' />
       </Canvas>
       <div className='absolute bottom-8 right-8 flex gap-4'>
