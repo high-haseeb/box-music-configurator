@@ -9,7 +9,7 @@ const Experience = () => {
   const zoomIn = useZoomStore(state => state.zoomIn)
   const zoomOut = useZoomStore(state => state.zoomOut)
   return (
-    <div className='w-full h-full bg-[#EEE]'>
+    <div className='w-full h-full bg-gray-800'>
       <Canvas>
         <PresentationControls speed={3} rotation={[Math.PI / 4, Math.PI / 2 + 1, 0]} polar={[-Math.PI, Math.PI]}>
         <directionalLight position={[1, 1, 1]}/>
