@@ -12,7 +12,7 @@ export function Model(props) {
 
   useFrame((state, delta) => {
     actions["Armature.002Action"].paused = false;
-    mixer.setTime(scroll.offset * duration);
+    mixer.setTime((scroll.offset > 0.001 ? scroll.offset - 0.001 : 0) * duration);
     actions["Armature.002Action"].paused = true;
   })
   useEffect(() => {
@@ -24,7 +24,7 @@ export function Model(props) {
   const zoom = useZoomStore(state => state.zoom);
 
   return (
-    <group ref={group} {...props} dispose={null} scale={zoom} rotation={[Math.PI/4,Math.PI/2 + 1 , 0 ]}>
+    <group ref={group} {...props} dispose={null} scale={zoom} castShadow>
       <group name="Scene">
         <group name="Armature002">
           <primitive object={nodes.Bone} />
