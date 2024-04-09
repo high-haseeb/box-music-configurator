@@ -24,7 +24,7 @@ export function Model(props) {
   const zoom = useZoomStore(state => state.zoom);
 
   return (
-    <group ref={group} {...props} dispose={null} scale={zoom} castShadow>
+    <group ref={group} {...props} dispose={null} scale={zoom} >
       <group name="Scene" castShadow>
         <group name="Armature002" castShadow>
           <primitive object={nodes.Bone} />
