@@ -26,7 +26,7 @@ const Experience = () => {
         </PresentationControls>
         <ambientLight/>
       </Canvas>
-      <div className="absolute bottom-8 text-white text-xl font-bold left-1/2 -translate-x-1/2">
+      <div className="absolute bottom-8 text-white text-xl font-bold left-1/2 -translate-x-1/2 h-12">
         ▼ Scroll to Animate ▼
       </div>
       <div className="absolute bottom-8 right-8 flex gap-4">
