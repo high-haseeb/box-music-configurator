@@ -1,13 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { Model } from "./Model";
 import {
-  Environment,
   PresentationControls,
   ScrollControls,
-  Html,
-  useScroll,
 } from "@react-three/drei";
 import { useZoomStore } from "@/store/zoomStore";
 
@@ -27,7 +24,7 @@ const Experience = () => {
             <Model />
           </ScrollControls>
         </PresentationControls>
-        <Environment preset="park" />
+        <ambientLight/>
       </Canvas>
       <div className="absolute bottom-8 text-white text-xl font-bold left-1/2 -translate-x-1/2">
         ▼ Scroll to Animate ▼
